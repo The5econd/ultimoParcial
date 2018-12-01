@@ -20,7 +20,7 @@ controller.create = function (req, res) {
             } else {
                 res.json({ ok: true, message: 'guardadooooo', guardado });
             }
-        }
+        });
     } else {
         res.status(400);
         res.json({ err: { code: 400, message: 'falta data', data } })
@@ -33,18 +33,18 @@ controller.get = function(req, res){
             res.status(500);
             res.json({ code: 500, err });
         } else {
-            res.json({ok: true, message = 'encontrado', post})
+            res.json({ok: true, message: 'encontrado', post})
         }
     })
 }
 
-controller.delete = function(req, res){
+controller.remove = function(req, res){
     postModel.FindByIdAndRemove(req.params.id, function(err, eliminado){
         if (err) {
             res.status(500);
             res.json({ code: 500, err });
         } else {
-            res.json({ok: true, message = 'se elimino correctamente', eliminado})
+            res.json({ok: true, message: 'se elimino correctamente', eliminado})
         }
     })
 }
