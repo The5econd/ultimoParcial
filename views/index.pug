@@ -1,24 +1,54 @@
 extends layout
 
 block content
-  h1 Administrador de gasolineria
-  p Welcome to #{title}
-  table
-    thead
-      tr
-        th Name
-        th Item Name
-        th Item Price
-    tbody
-      tr
-        td Alvin
-        td Eclair
-        td 0.87
-      tr
-        td Alan
-        td Jellybean
-        td 3.76
-      tr
-        td Jonathan
-        td Lollipop
-        td 7.00
+  div(style="border: solid 2px teal")
+    div(style="margin: 5%")
+      h1(style = "font-family: 'Amatic SC', cursive; font-size: 6em") Administrador de gasolineria
+      table.stripes
+        thead
+          tr
+            label(for="franq") Franquicia
+            input(type="text" name = "franq" style=" border-bottom: solid 2px teal")
+          tr
+            label(for="nombre") Nombre
+            input(type="text" name = "nombre")
+          tr
+            label(for="precio") Gasolina regular
+            input(type="text" name = "precio")
+            div(style = "display: flex; justify-content: center")
+              input(type="submit" style = "border: none; background: teal; color: white; padding: 1em 3em; margin: 0 auto")
+
+      table.stripes
+        thead
+          tr
+            th(style = "font-family: 'Amatic SC', cursive; font-size: 3em") ID
+            th(style = "font-family: 'Amatic SC', cursive; font-size: 3em") Franquicia
+            th(style = "font-family: 'Amatic SC', cursive; font-size: 3em") Nombre
+            th(style = "font-family: 'Amatic SC', cursive; font-size: 3em") Gasolina regular
+            th(style = "font-family: 'Amatic SC', cursive; font-size: 3em") Opciones
+        tbody
+          tr
+            td 1
+            td Texaco
+            td Fran
+            td 3.28
+            td 
+              i(class="fas fa-trash-alt" style = "margin: 1em")
+              i(class="fas fa-edit" style = "margin: 1em")
+          tr
+            td 2
+            td Shell
+            td Julio
+            td 6.00
+            td 
+              i(class="fas fa-trash-alt" style = "margin: 1em")
+              i(class="fas fa-edit" style = "margin: 1em")
+          tr
+            td 3
+            td Uno
+            td Marco
+            td 1.90
+            td 
+              i(class="fas fa-trash-alt" style = "margin: 1em")
+              i(class="fas fa-edit" style = "margin: 1em")
+        
