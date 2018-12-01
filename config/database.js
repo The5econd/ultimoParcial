@@ -6,5 +6,5 @@ mongoose.connect(mongodb.URI,{
     useCreateIndex: true,
     useNewUrlParser: true
 })
-.then(db=>console.log('Coneccion hecha'))
+.then(db => console.log('Coneccion hecha'))
 .catch(err=>console.error(err));
