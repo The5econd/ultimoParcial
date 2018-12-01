@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-postModel = mongoose.Schema;
+const {schema} = mongoose.Schema;
 
-let postModel = new Schema({
+let postModel = new mongoose.Schema({
     materia: {
         type: String
     },
@@ -9,4 +9,4 @@ let postModel = new Schema({
     descripcion: String
 })
 
-module.exports = mongoose.module('post', postModel);
+module.exports = mongoose.model('post', postModel);
