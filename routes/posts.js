@@ -9,3 +9,5 @@ router.get('/', controller.getAll);
 router.get('/:id', controller.get);
 
 router.delete('/:id', controller.remove);
+
+router.put('/', controller.update);

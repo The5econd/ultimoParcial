@@ -1,3 +1,7 @@
+
+
+
+
 function mostrar(){
     fetch('/api/gasolineria', {
         method: 'GET'
@@ -10,15 +14,32 @@ function mostrar(){
             gas: response.precio
         };
 
-        tbody = document.getElementById('tablaa').innerHTML = `<thead>
+        tbody = document.getElementById('tablaa')
+        div = document.createElement(div)  
+        div.innerHTML = `<thead>
                                 <tr>
-                                    <th style = "font-family: 'Amatic SC', cursive; font-size: 3em; background-color: teal"> ID </th>
-                                    <th style = "font-family: 'Amatic SC', cursive; font-size: 3em; background-color: teal"> Franquicia </th>
-                                    <th style = "font-family: 'Amatic SC', cursive; font-size: 3em; background-color: teal"> Nombre </th>
-                                    <th style = "font-family: 'Amatic SC', cursive; font-size: 3em; background-color: teal"> Gasolina regular </th>
-                                    <th style = "font-family: 'Amatic SC', cursive; font-size: 3em; background-color: teal"> Opciones </th>
+                                    <th class = "eliminar" style = "font-family: 'Amatic SC', cursive; font-size: 3em; background-color: teal"> ${data.id} </th>
+                                    <th class = "eliminar" style = "font-family: 'Amatic SC', cursive; font-size: 3em; background-color: teal"> ${data.franquicia} </th>
+                                    <th class = "eliminar" style = "font-family: 'Amatic SC', cursive; font-size: 3em; background-color: teal"> ${data.nombre} </th>
+                                    <th class = "eliminar" style = "font-family: 'Amatic SC', cursive; font-size: 3em; background-color: teal"> ${data.gas} regular </th>
+                                    <th class = "eliminar" style = "font-family: 'Amatic SC', cursive; font-size: 3em; background-color: teal"> Opciones </th>
                                 </tr>
                             </thead>`;
+        document.getElementById().addEventListener(click, event=>{
+            this.eliminar(event, data, div)
+        })
+        
+    })
+}
+
+function eliminar(event, data, div){
+    fetch('/api/gasolineria', {
+        method: 'DELETE'
+    }).then(res => res.json())
+    .then(response => {
+        if (response){
+            
+        }
         
     })
 }

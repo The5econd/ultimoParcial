@@ -8,4 +8,4 @@ let postModel = new mongoose.Schema({
     descripcion: String
 })
 
-module.exports = mongoose.module('post', postModel);
+module.exports = mongoose.model('post', postModel);
